@@ -1,0 +1,78 @@
+@import "../../../../../scss/variables.scss";
+
+.article {
+    display: grid;
+    grid-template-rows: 2fr 1fr 2fr 4fr 2fr;
+    width: 50%;
+    align-items: center;
+    margin: 2rem 0;
+    padding: 1rem;
+    background: $background-secondary;
+    border-radius: 0.4rem;
+    color: $color-secondary;
+    &__navigation {
+        display: flex;
+        align-items: center;
+    }
+    &__back-button {
+        margin: 0 0.5rem;
+        width: 2rem;
+        height: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        &:hover {
+            color: $btn-hover;
+        }
+    }
+    &__errors {
+        p {
+            background: $error;
+            line-height: 1.5rem;
+        }
+    }
+    h3 {
+        font-size: 1.5rem;
+    }
+    &__form {
+        display: grid;
+        grid-template-rows: 1fr 2fr;
+        width: 100%;
+    }
+    &__property {
+        display: flex;
+        flex-direction: column;
+        margin-top: 0.5rem;
+    }
+    &__input {
+        background: $background-main;
+        border: none;
+        border-radius: 5px;
+        padding: 0.5rem;
+        flex: 1;
+    }
+    &__save {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0.5rem;
+        justify-content: center;
+        button {
+            padding: 1rem;
+            background: $btn-enabled;
+            width: 30%;
+            font-size: 1.1rem;
+            color: $color-secondary;
+            text-transform: uppercase;
+            &:hover {
+                background: $btn-hover;
+                cursor: pointer;
+            }
+            &:disabled {
+                background: $btn-disabled;
+                cursor: default;
+            }
+        }
+    }
+}

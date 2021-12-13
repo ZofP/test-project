@@ -1,0 +1,61 @@
+.auth {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    &__content {
+        height: 100%;
+        width: 25%;
+        padding: 1.5rem;
+        border: 1px solid black;
+        display: grid;
+        background: $background-secondary;
+        color: $color-secondary;
+        align-items: center;
+        grid-template-rows: 1fr 1fr 2fr 1fr;
+        h2 {
+            text-transform: uppercase;
+            text-align: center;
+            font-weight: 700;
+        }
+    }
+    &__form {
+        display: flex;
+        flex-direction: column;
+        &__input {
+            display: flex;
+            flex-direction: column;
+            margin-top: 1rem;
+            input {
+                border-radius: 1rem;
+                padding: 0.5rem;
+            }
+        }
+    }
+    &__btn {
+        margin-top: 1.5rem;
+        align-self: center;
+        padding: 0.7rem;
+        background: $btn-enabled;
+        cursor: pointer;
+        color: $color-secondary;
+        font-size: 1.1rem;
+        width: 60%;
+        &:hover {
+            background: $btn-hover;
+        }
+    }
+    &__link {
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        a {
+            margin-top: 1rem;
+        }
+    }
+    &__errors {
+        background: $error;
+    }
+}

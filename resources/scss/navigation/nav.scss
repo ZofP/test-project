@@ -1,0 +1,28 @@
+.nav {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 2rem;
+    background: $background-secondary;
+    color: $color-secondary;
+    > p {
+        padding: 1rem;
+        margin-right: 1rem;
+    }
+
+    &__user {
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    &__log-out {
+        padding: 1rem;
+        border: none;
+        background: $btn-disabled;
+        color: $color-secondary;
+        cursor: pointer;
+        font-size: 1rem;
+        &:hover {
+            background: rgba($btn-disabled, 0.3);
+        }
+    }
+}

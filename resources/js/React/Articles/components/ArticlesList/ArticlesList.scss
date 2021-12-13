@@ -1,0 +1,55 @@
+@import "../../../../../scss/variables.scss";
+
+$border-thin: 1px solid black;
+$border-thick: 2px solid black;
+
+.article {
+    &__list {
+        display: grid;
+        justify-content: center;
+        margin: 1rem 0 2rem 0;
+
+        &__row {
+            display: grid;
+            grid-template-columns: 1fr 4fr 1fr 1fr;
+            line-height: 2rem;
+
+            > div {
+                border-left: $border-thin;
+                border-right: $border-thin;
+                border-bottom: $border-thin;
+                padding: 0.5rem 1rem;
+                &:first-of-type {
+                    border-left: $border-thick;
+                }
+                &:last-of-type {
+                    border-right: $border-thick;
+                }
+                display: flex;
+            }
+        }
+        &__headers {
+            font-size: 1.3rem;
+            font-weight: 600;
+            border-top: $border-thick;
+            border-bottom: $border-thin;
+            > div {
+                justify-content: center;
+            }
+        }
+    }
+
+    &__list__errors {
+        background: $error;
+        color: $color-secondary;
+        text-align: center;
+        margin: 2rem;
+        font-size: 2rem;
+        padding: 1rem;
+    }
+    &__loading {
+        display: flex;
+        justify-content: center;
+        margin: 5rem;
+    }
+}

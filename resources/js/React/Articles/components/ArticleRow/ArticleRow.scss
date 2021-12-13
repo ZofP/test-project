@@ -1,0 +1,17 @@
+@import "../../../../../scss/variables.scss";
+
+.article {
+    &__actions {
+        justify-content: center;
+        a {
+            padding: 0 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            border: 1px solid gray;
+            background: $background-secondary;
+            &:hover {
+                background: rgba($background-secondary, 0.7);
+            }
+        }
+    }
+}
