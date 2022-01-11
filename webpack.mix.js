@@ -24,15 +24,12 @@ if (!mix.inProduction()) {
 
 // ADD YOUR COMPILED ASSETS HERE
 mix.sass('resources/scss/main.scss', 'public/css');
-mix.js('resources/js/React/Articles/index.js', 'public/js/articles.js').react();
+mix.ts('resources/js/React/Articles/index.tsx', 'public/js/articles.js').react();
 
 mix.browserSync({
-    host: 'localhost',
-    port: 3000,
-    proxy: {
-        target: process.env.APP_URL
-    }
+    proxy: 'localhost',
 });
+
 
 // add versioning 
 mix.version();

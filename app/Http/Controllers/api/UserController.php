@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-    public function getUserId()
+    public function getUserId(): array
     {
 
         return ['user_id' => Auth::id()];

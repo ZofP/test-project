@@ -14,7 +14,7 @@ class ArticleRequest extends FormRequest
      *
      * @return bool
      */
-    public function authorize(Request $request)
+    public function authorize(Request $request): bool
     {
         $article_id = $request->input('article_id') ?? null;
 
@@ -33,7 +33,7 @@ class ArticleRequest extends FormRequest
      *
      * @return array
      */
-    public function rules()
+    public function rules(): array
     {
 
         return [

@@ -5,17 +5,18 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ArticleRequest;
 use App\Models\Article;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\View\View;
 
 class ArticleController extends Controller
 {
     //
 
-    public function app()
+    public function app(): View
     {
         return view('article.app');
     }
 
-    public function store(ArticleRequest $request)
+    public function store(ArticleRequest $request): array
     {
         $article = new Article;
 
@@ -29,7 +30,7 @@ class ArticleController extends Controller
 
     }
 
-    public function update(ArticleRequest $request)
+    public function update(ArticleRequest $request): void
     {
         $article_id = $request->input('article_id');
 

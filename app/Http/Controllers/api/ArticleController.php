@@ -7,7 +7,7 @@ use App\Models\Article;
 
 class ArticleController extends Controller
 {
-    public function index()
+    public function index(): array
     {
         $articles = Article::orderBy('created_at', 'DESC')->with('user:id,name')->get();
 
@@ -18,7 +18,7 @@ class ArticleController extends Controller
         return ['articles' => $articles];
     }
 
-    public function show($article_id)
+    public function show($article_id): array
     {
 
         $article = Article::findOrFail($article_id);
