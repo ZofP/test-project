@@ -17,7 +17,4 @@ Route::get('/', function () {
     return redirect()->route('articles');
 });
 
-// articles routes
-Route::post('/article/store', 'ArticleController@store');
-Route::post('/article/update', 'ArticleController@update');
 Route::get('/articles/{path?}', 'ArticleController@app')->where('path', '.*')->middleware('auth')->name('articles');
