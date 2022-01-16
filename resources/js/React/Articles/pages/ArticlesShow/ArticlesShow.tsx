@@ -1,47 +1,43 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
-import Article from '../../components/Article/Article';
-import './ArticlesShow.scss'
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import Article from "../../components/Article/Article";
 
+import { Article as ArticleType } from "../../components/App/Types";
+import "./ArticlesShow.scss";
 
 const ArticlesShow = () => {
-
     const params = useParams();
 
     const navigate = useNavigate();
 
     const articleId = Number(params.id);
 
-    const [article, setArticle] = useState(null);
+    const [article, setArticle] = useState({} as ArticleType);
 
     const fetchArticleDetail = async () => {
-
         try {
             const response = await axios.get(`/api/articles/${articleId}`);
             setArticle(response.data.article);
+        } catch (err) {
+            navigate("/");
         }
-
-        catch (err) {
-            navigate('/')
-        }
-
-    }
+    };
 
     useEffect(() => {
         fetchArticleDetail();
-    }, [articleId])
+    }, [articleId]);
 
     if (!article) {
-        return null
+        return null;
     }
 
     return (
-        <div className='articles__show'>
+        <div className="articles__show">
             <h2>Article Detail</h2>
-            <Article type='edit' article={article} />
+            <Article type="edit" article={article} />
         </div>
-    )
-}
+    );
+};
 
-export default ArticlesShow
+export default ArticlesShow;

@@ -41,14 +41,14 @@ const Article = ({ type, article }: TProps) => {
         return errorsArray;
     };
 
-    const store = async () => {
+    const create = async () => {
         const data: Data = {
             title: title,
             text: text,
         };
 
         try {
-            await axios.post(`/article/store`, data);
+            await axios.post(`/api/articles`, data);
 
             setErrors([]);
             setTitle("");
@@ -75,7 +75,7 @@ const Article = ({ type, article }: TProps) => {
             };
 
             try {
-                await axios.post(`/article/update`, data);
+                await axios.put(`/api/articles/${article.id}`, data);
                 setErrors([]);
             } catch (error: any) {
                 const errorsObject: ErrorObject = error.response.data.errors;
@@ -92,7 +92,7 @@ const Article = ({ type, article }: TProps) => {
 
     const handleClick = () => {
         if (type === "new") {
-            store();
+            create();
         } else if (type === "edit") {
             update();
         }

@@ -26,6 +26,7 @@ class ArticleRequest extends FormRequest
         } else {
             return true;
         }
+
     }
 
     /**

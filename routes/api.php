@@ -18,7 +18,14 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/articles/{articleId}', 'api\ArticleController@show');
-Route::get('/articles', 'api\ArticleController@index');
+// articles routes
 
-Route::get('/user', 'api\UserController@getUserId');
+Route::middleware(['auth:sanctum'])->group(function () {
+    Route::post('articles', 'api\ArticleController@create');
+    Route::put('articles/{articleId}', 'api\ArticleController@update');
+
+    Route::get('articles/{articleId}', 'api\ArticleController@show');
+    Route::get('articles', 'api\ArticleController@index');
+
+    Route::get('/user', 'api\UserController@getUserId');
+});
